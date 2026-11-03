@@ -46,4 +46,10 @@
          -->
    <string translatable="false" name="config_mainBuiltInDisplayCutout">M 0,0 H -67.42857142857143 V 30.85714285714286 H 67.42857142857143 V 0 H 0 Z @dp</string>
    <string translatable="false" name="config_mainBuiltInDisplayCutoutRectApproximation">@*android:string/config_mainBuiltInDisplayCutout</string>
+
+   <!-- Cached (background) apps Android keeps. Android 16 allows 1024 because it
+        freezes cached apps, which needs the cgroup v2 freezer this 4.4 kernel does
+        not have, so here they keep running and fill the RAM. 32 suits this phone's
+        3-4 GB; older apps beyond that are closed and start fresh next time. -->
+   <integer name="config_customizedMaxCachedProcesses">32</integer>
 </resources>
