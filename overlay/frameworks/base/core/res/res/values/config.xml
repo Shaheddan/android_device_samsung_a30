@@ -52,4 +52,9 @@
         not have, so here they keep running and fill the RAM. 32 suits this phone's
         3-4 GB; older apps beyond that are closed and start fresh next time. -->
    <integer name="config_customizedMaxCachedProcesses">32</integer>
+
+   <!-- Adaptive brightness. The TCS3701 light sensor works (its lux follows the room,
+        drops to 0 when covered) and the brightness curve is in the common overlay;
+        only this switch was missing, so Settings had no Adaptive brightness option. -->
+   <bool name="config_automatic_brightness_available">true</bool>
 </resources>
