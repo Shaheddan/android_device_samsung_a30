@@ -52,11 +52,13 @@
         108px lines up with the glass on the A30. -->
    <dimen name="rounded_corner_radius">108px</dimen>
 
-   <!-- Cached (background) apps Android keeps. Android 16 allows 1024 because it
-        freezes cached apps, which needs the cgroup v2 freezer this 4.4 kernel does
-        not have, so here they keep running and fill the RAM. 32 suits this phone's
-        3-4 GB; older apps beyond that are closed and start fresh next time. -->
-   <integer name="config_customizedMaxCachedProcesses">32</integer>
+   <!-- Cached (background) processes Android keeps, about half of them apps. Android
+        allows 1024 because it freezes cached apps, which needs the cgroup v2 freezer this
+        4.4 kernel does not have, so here they keep running. lmkd (on PSI) closes them
+        when memory runs short; this only caps how many can wait. 64 suits this phone's
+        3-4 GB. On a 4 GB A30, 64 kept 22 of 23 apps warm on a second round, 32 kept 2.
+        Settings > System > Performance > Memory can set fewer or more. -->
+   <integer name="config_customizedMaxCachedProcesses">64</integer>
 
    <!-- Adaptive brightness. The TCS3701 light sensor works (its lux follows the room,
         drops to 0 when covered) and the brightness curve is in the common overlay;
