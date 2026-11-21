@@ -47,6 +47,11 @@
    <string translatable="false" name="config_mainBuiltInDisplayCutout">M 0,0 H -67.42857142857143 V 30.85714285714286 H 67.42857142857143 V 0 H 0 Z @dp</string>
    <string translatable="false" name="config_mainBuiltInDisplayCutoutRectApproximation">@*android:string/config_mainBuiltInDisplayCutout</string>
 
+   <!-- The panel's corners are rounded, so let SystemUI draw matching corners over them
+        (smooth edges instead of the jagged pixel steps) and tell apps where they are.
+        108px lines up with the glass on the A30. -->
+   <dimen name="rounded_corner_radius">108px</dimen>
+
    <!-- Cached (background) apps Android keeps. Android 16 allows 1024 because it
         freezes cached apps, which needs the cgroup v2 freezer this 4.4 kernel does
         not have, so here they keep running and fill the RAM. 32 suits this phone's
